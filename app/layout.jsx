@@ -3,7 +3,7 @@ import Provider from '@components/Provider'
 import '@styles/global.css'
 export const metadata = {
   title: 'promptopia',
-  description: 'a new newxt applciatiopm',
+  description: 'a new next application',
 }
 
 export default function RootLayout({ children }) {
@@ -12,13 +12,13 @@ export default function RootLayout({ children }) {
       <body>
         <Provider>
 
-        <div className='main'>
-          <div className='gradient' />
-        </div>
-        <main className='app'>
-          <Nav/>
-          {children}
-        </main>
+          <div className='main'>
+            <div className='gradient' />
+          </div>
+          <main className='app'>
+            <Nav />
+            {children}
+          </main>
         </Provider>
       </body>
     </html>
