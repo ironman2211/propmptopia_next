@@ -24,7 +24,7 @@ const UpdatePrompt = () => {
                 tag: data.tag,
             });
         }
-         if(promptId) getPrompt()
+         if(promptId)  getPrompt()
 
     },[promptId])
 

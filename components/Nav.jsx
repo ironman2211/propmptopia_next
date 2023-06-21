@@ -15,7 +15,7 @@ const Nav = () => {
 
       setProvider(response)
     }
-   return setProviders()
+    setProviders()
   },[])
   // console.log(session)
   return (
