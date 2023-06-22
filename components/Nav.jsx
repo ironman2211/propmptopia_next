@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
-
+import { motion } from 'framer-motion';
 const Nav = () => {
   const {data:session} =useSession()
   const [toggleDropdown, setToggleDropdown] = useState(false)
@@ -30,7 +30,20 @@ const Nav = () => {
         />
         <p className='logo_text'>Promptopia</p>
       </Link>
-      <div className="sm:flex hidden">
+      
+      <motion.div className="sm:flex hidden" initial="hidden" animate="visible" variants={{
+  hidden: {
+    scale: .8,
+    opacity: 0
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      delay: .4
+    }
+  },
+}}>
 
         {
           session?.user ? <div className="flex gap-3 md:gap-5">
@@ -68,7 +81,7 @@ const Nav = () => {
           </>)
         }
 
-      </div>
+      </motion.div>
       <div className='sm:hidden flex relative'>
         {session?.user? (
           <div className='flex'>
